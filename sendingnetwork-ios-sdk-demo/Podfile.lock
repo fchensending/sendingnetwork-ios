@@ -1,0 +1,125 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - BigInt (5.0.0)
+  - CocoaLumberjack (3.8.0):
+    - CocoaLumberjack/Core (= 3.8.0)
+  - CocoaLumberjack/Core (3.8.0)
+  - GenericJSON (2.0.2)
+  - GZIP (1.3.0)
+  - libbase58 (0.1.4)
+  - Logging (1.0.0)
+  - MatrixSDKCrypto (0.1.7)
+  - OLMKit (3.2.12):
+    - OLMKit/olmc (= 3.2.12)
+    - OLMKit/olmcpp (= 3.2.12)
+  - OLMKit/olmc (3.2.12)
+  - OLMKit/olmcpp (3.2.12)
+  - Realm (10.27.0):
+    - Realm/Headers (= 10.27.0)
+  - Realm/Headers (10.27.0)
+  - RNCryptor (5.1.0)
+  - secp256k1.swift (0.1.4)
+  - SendingnetworkSDK (0.0.6):
+    - SendingnetworkSDK/Core (= 0.0.6)
+  - SendingnetworkSDK/Core (0.0.6):
+    - SendingnetworkSDK/Lite
+    - SendingnetworkSDK/Radix
+  - SendingnetworkSDK/CryptoSDK (0.0.6):
+    - MatrixSDKCrypto (= 0.1.7)
+  - SendingnetworkSDK/Lite (0.0.6):
+    - AFNetworking (~> 4.0.0)
+    - GZIP (~> 1.3.0)
+    - libbase58 (~> 0.1.4)
+    - OLMKit (~> 3.2.5)
+    - Realm (= 10.27.0)
+    - RNCryptor (~> 5.0)
+    - SendingnetworkSDK/CryptoSDK
+    - SVGKit
+    - SwiftyBeaver (= 1.9.5)
+    - TrustWalletCore (~> 2.9.2)
+  - SendingnetworkSDK/Radix (0.0.6)
+  - SnapKit (5.6.0)
+  - SVGKit (3.0.0):
+    - CocoaLumberjack (~> 3.0)
+  - SwiftProtobuf (1.20.3)
+  - SwiftyBeaver (1.9.5)
+  - TrustWalletCore (2.9.8):
+    - TrustWalletCore/Core (= 2.9.8)
+  - TrustWalletCore/Core (2.9.8):
+    - TrustWalletCore/Types
+  - TrustWalletCore/Types (2.9.8):
+    - SwiftProtobuf
+  - web3.swift (1.4.1):
+    - BigInt (~> 5.0.0)
+    - GenericJSON (~> 2.0)
+    - Logging (~> 1.0.0)
+    - secp256k1.swift (~> 0.1)
+
+DEPENDENCIES:
+  - SendingnetworkSDK (from `../SendingnetworkSDK.podspec`)
+  - SnapKit
+  - web3.swift
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - BigInt
+    - CocoaLumberjack
+    - GenericJSON
+    - GZIP
+    - libbase58
+    - Logging
+    - MatrixSDKCrypto
+    - OLMKit
+    - Realm
+    - RNCryptor
+    - secp256k1.swift
+    - SnapKit
+    - SVGKit
+    - SwiftProtobuf
+    - SwiftyBeaver
+    - TrustWalletCore
+    - web3.swift
+
+EXTERNAL SOURCES:
+  SendingnetworkSDK:
+    :path: "../SendingnetworkSDK.podspec"
+
+SPEC CHECKSUMS:
+  AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  BigInt: 74b4d88367b0e819d9f77393549226d36faeb0d8
+  CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
+  GenericJSON: 79a840eeb77030962e8cf02a62d36bd413b67626
+  GZIP: 416858efbe66b41b206895ac6dfd5493200d95b3
+  libbase58: 7c040313537b8c44b6e2d15586af8e21f7354efd
+  Logging: 9ef4ecb546ad3169398d5a723bc9bea1c46bef26
+  MatrixSDKCrypto: 2bd9ca41b2c644839f4e680a64897d56b3f95392
+  OLMKit: da115f16582e47626616874e20f7bb92222c7a51
+  Realm: 9ca328bd7e700cc19703799785e37f77d1a130f2
+  RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
+  secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
+  SendingnetworkSDK: 0caeaae8513db59e2ee738be99985502d16a100f
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
+  SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
+  SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
+  TrustWalletCore: 53f09313edb1c010de78314d023c67d2d4654864
+  web3.swift: 82f5f5bd5b4983e155982080d4bfbfbc5e56e92a
+
+PODFILE CHECKSUM: d8b77feb6bf1e16b2bc371110b061ebedd2c9eaa
+
+COCOAPODS: 1.11.3

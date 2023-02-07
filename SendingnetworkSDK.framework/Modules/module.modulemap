@@ -1,0 +1,11 @@
+framework module SendingnetworkSDK {
+  umbrella header "SendingnetworkSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module SendingnetworkSDK.Swift {
+  header "SendingnetworkSDK-Swift.h"
+  requires objc
+}

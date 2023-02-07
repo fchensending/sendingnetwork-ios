@@ -1,0 +1,8 @@
+framework module "Radixmobile" {
+	header "ref.h"
+    header "Radixmobile.objc.h"
+    header "Universe.objc.h"
+    header "Radixmobile.h"
+
+    export *
+}
