@@ -1,0 +1,5 @@
+Gobind.xcframework/ios-arm64/Gobind.framework/Versions/A/Gobind filter=lfs diff=lfs merge=lfs -text
+Gobind.xcframework/ios-arm64_x86_64-simulator/Gobind.framework/Versions/A/Gobind filter=lfs diff=lfs merge=lfs -text
+Radixmobile.xcframework/ios-arm64_x86_64-simulator/Radixmobile.framework/Versions/A/Radixmobile filter=lfs diff=lfs merge=lfs -text
+Radixmobile.xcframework/ios-arm64/Radixmobile.framework/Versions/A/Radixmobile filter=lfs diff=lfs merge=lfs -text
+SendingnetworkSDK.framework/SendingnetworkSDK filter=lfs diff=lfs merge=lfs -text
