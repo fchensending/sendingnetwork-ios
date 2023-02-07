@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.author             = { "sending.network" => "support@sending.network" }
   s.social_media_url   = "http://twitter.com/Sending_Network"
 
-  s.source       = { :git => "https://github.com/LinX-ON/sendingnetwork-ios-sdk.git", :tag => "#{s.version}" }
+  s.source       = { :git => "https://github.com/Sending-Network/sendingnetwork-ios", :tag => "#{s.version}" }
   s.requires_arc  = true
   s.swift_versions = ['5.1', '5.2']
   
