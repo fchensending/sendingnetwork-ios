@@ -21,7 +21,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func startServer(_ sender: Any) {
-        RadixService.shared.start()
+        HUD.showLoading(delay: 2.0)
+        DispatchQueue.main.async {
+            RadixService.shared.start()
+        }
         serverConnect = true
         self.serverLabel.text = "server start"
     }
@@ -30,6 +33,7 @@ class MainViewController: UIViewController {
         RadixService.shared.stop()
         serverConnect = false
         self.serverLabel.text = "server stop"
+        
     }
     
     
@@ -38,6 +42,7 @@ class MainViewController: UIViewController {
             self.navigationController?.pushViewController(DIDLoginViewController(), animated: true)
         } else {
             print("please open server")
+            HUD.showImage(text: "please start server",status: .warn)
         }
     }
     /*

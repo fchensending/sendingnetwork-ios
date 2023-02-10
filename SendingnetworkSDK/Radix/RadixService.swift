@@ -2,7 +2,6 @@
 //  File.swift
 //  
 //
-//  Create/Users/chenghao/Developer/sendingnetwork-ios-sdk/sendingnetwork-ios-sdk-demod by octopus on 2022/7/13.
 //
 
 import Foundation

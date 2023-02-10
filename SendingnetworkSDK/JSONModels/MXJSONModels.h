@@ -1660,12 +1660,13 @@ FOUNDATION_EXPORT NSString *const kMXPushRuleScopeStringDevice;
 @property (nonatomic, nullable) NSString *type;
 @property (nonatomic, nullable) NSString *value;
 @property (nonatomic, nullable) NSString *keyId;
+@property (nonatomic, nullable) NSString *raw;
 @end
 
 @interface MXDIDListInfoResponse : MXJSONModel
 @property (nonatomic, nullable) NSString *publicKey;
-@property (nonatomic, nullable) MXDiDInfoResponse *controllers;
-@property (nonatomic, nullable) MXDiDInfoResponse *publicKeys;
+@property (nonatomic, nullable) NSArray<MXDiDInfoResponse*> *controllers;
+@property (nonatomic, nullable) NSArray<MXDiDInfoResponse*> *publicKeys;
 @end
 
 @interface MXCreateDIDResponse : MXJSONModel

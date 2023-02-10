@@ -12,7 +12,9 @@ target 'sendingnetwork-ios-demo' do
 #  pod 'KeychainAccess'
   pod 'web3.swift'
   pod 'SnapKit'
+  pod "MBProgressHUD"
+  pod "Kingfisher"
   
-  pod 'SendingnetworkSDK', :path => '../SendingnetworkSDK.podspec'
+  pod 'SendingnetworkSDK/Test', :path => '../SendingnetworkSDK.podspec'
 
 end

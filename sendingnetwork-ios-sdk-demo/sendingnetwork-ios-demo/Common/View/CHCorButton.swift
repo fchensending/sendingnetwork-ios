@@ -1,13 +1,14 @@
 //
-//  CHButton.swift
+//  CHCorButton.swift
 //  sendingnetwork-ios-demo
 //
-//  Created by chenghao on 2023/1/18.
+//  Created by ch on 2023/2/9.
+//  Copyright © 2023 sending.network. All rights reserved.
 //
 
 import UIKit
 
-class CHButton: UIButton {
+class CHCorButton: UIButton {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -29,10 +30,11 @@ class CHButton: UIButton {
     
     private func setupUI() {
         titleLabel?.font = .pingFangSCFont(ofSize: 14, weight: .semibold)
-        setTitleColor(UIColor.white, for: .normal)
-        setBackgroundImage(UIColor(hex: "#2299FF").image, for: .normal)
-        layer.cornerRadius = 10
+        setTitleColor(.themeBlue, for: .normal)
+        layer.cornerRadius = 5
         layer.masksToBounds = true
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.themeBlue.cgColor
     }
 
 }

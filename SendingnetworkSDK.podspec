@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SendingnetworkSDK"
-  s.version      = "0.0.6"
+  s.version      = "0.1.0"
   s.summary      = "The iOS SDK to build apps compatible with Sendingnetwork (https://www.sending.network)"
 
   s.description  = <<-DESC
@@ -57,6 +57,34 @@ Pod::Spec.new do |s|
       ss.dependency 'SendingnetworkSDK/CryptoSDK'
       ss.dependency 'SVGKit'
       ss.vendored_frameworks = "SendingnetworkSDK.framework"
+
+  end
+  
+  s.subspec 'Test' do |ss|
+      ss.ios.deployment_target = "12.0"
+
+      ss.source_files = "SendingnetworkSDK", "SendingnetworkSDK/**/*.{h,m}", "SendingnetworkSDK/**/*.{swift}"
+#      ss.source_files = "SendingnetworkSDK.framework/Headers/*.{h,m}"
+      ss.private_header_files = ['SendingnetworkSDK/SendingnetworkSDKSwiftHeader.h', "SendingnetworkSDK/**/*_Private.h"]
+      ss.resources = "SendingnetworkSDK/**/*.{xcdatamodeld}"
+      ss.frameworks = "CoreData"
+
+      ss.dependency 'AFNetworking', '~> 4.0.0'
+      ss.dependency 'GZIP', '~> 1.3.0'
+
+      ss.dependency 'SwiftyBeaver', '1.9.5'
+
+      # Requirements for e2e encryption
+      ss.dependency 'OLMKit', '~> 3.2.5'
+      ss.dependency 'Realm', '10.27.0'
+      ss.dependency 'libbase58', '~> 0.1.4'
+      ss.dependency 'RNCryptor', '~> 5.0'
+      ss.dependency 'TrustWalletCore', '~> 2.9.2'
+#      ss.dependency 'MatrixSDKCrypto', '0.1.7', :configurations => ["DEBUG"], :inhibit_warnings => true
+      ss.dependency 'SendingnetworkSDK/CryptoSDK'
+      ss.dependency 'SVGKit'
+      ss.dependency 'SendingnetworkSDK/Radix'
+#      ss.vendored_frameworks = "SendingnetworkSDK.framework"
 
   end
   

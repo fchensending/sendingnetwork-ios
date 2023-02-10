@@ -6,62 +6,49 @@
 //
 
 import UIKit
-import SendingnetworkSDK
 import SnapKit
 import web3
+import SendingnetworkSDK
 
-class DIDLoginViewController: UIViewController {
+class DIDLoginViewController: BaseViewController {
     
-    
-    let base_url = BaseSetting.base_url
-    //Your privateKey
+        //Your privateKey
     let privateKey = "6f2e978b08db57348dacfdf48ddaee7586b95331e0db070472bbc16a3981887e"
     
-    var walletAddress = "0x6F47cAf3270b14AB7242317a176ed8B69d393eBb"
+    let walletAddress = "0x6F47cAf3270b14AB7242317a176ed8B69d393eBb"
     
-    var did: String?
-        
-    private var client: MXRestClient?
-    
+    var did: String = ""
+            
     private var listResponse: MXDIDListResponse?
-    
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "DID"
-        self.view.backgroundColor = .white
-        let credentials = MXCredentials()
-        credentials.homeServer = base_url
-        self.client = MXRestClient(credentials: credentials, unrecognizedCertificateHandler: nil)
-        setupUI()
         // Do any additional setup after loading the view.
     }
     
-    private func setupUI() {
-        view.addSubview(addressTextField)
-        view.addSubview(randAddressButton)
+    override func setupUI() {
+        view.addSubview(addressLable)
+        view.addSubview(privateKeyLable)
         view.addSubview(didListButton)
         
-        addressTextField.snp.makeConstraints { make in
+        addressLable.snp.makeConstraints { make in
             make.left.equalTo(15)
-            make.right.equalTo(-60)
+            make.right.equalTo(-15)
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(15)
-            make.height.equalTo(44)
         }
         
-        randAddressButton.snp.makeConstraints { make in
-            make.left.equalTo(addressTextField.snp.right)
-            make.right.equalToSuperview()
-            make.height.equalTo(30)
-            make.centerY.equalTo(addressTextField.snp.centerY)
+        privateKeyLable.snp.makeConstraints { make in
+            make.left.equalTo(15)
+            make.right.equalTo(-15)
+            make.top.equalTo(addressLable.snp.bottom).offset(15)
         }
         
         didListButton.snp.makeConstraints { make in
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.height.equalTo(44)
-            make.top.equalTo(addressTextField.snp.bottom).offset(15)
+            make.top.equalTo(privateKeyLable.snp.bottom).offset(15)
         }
         
         view.addSubview(actionView)
@@ -89,17 +76,22 @@ class DIDLoginViewController: UIViewController {
 
     }
     
-    private lazy var addressTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "walletAddress"
-        return textField
+    private lazy var addressLable: UILabel = {
+        let label = UILabel()
+        label.font = .pingFangSCFont(ofSize: 15)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.text = "walletAddress: \(walletAddress)"
+        return label
     }()
     
-    private lazy var randAddressButton: CHButton = {
-        let button = CHButton()
-        button.setTitle("address", for: .normal)
-        button.addTarget(self, action: #selector(randomAddress), for: .touchUpInside)
-        return button
+    private lazy var privateKeyLable: UILabel = {
+        let label = UILabel()
+        label.font = .pingFangSCFont(ofSize: 15)
+        label.textColor = .black
+        label.numberOfLines = 0
+        label.text = "privateKey: \(privateKey)"
+        return label
     }()
     
     private lazy var didListButton: CHBigButton = {
@@ -114,6 +106,7 @@ class DIDLoginViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(DIDTableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.estimatedRowHeight = 60
         return tableView
     }()
     
@@ -129,82 +122,36 @@ class DIDLoginViewController: UIViewController {
         return button
     }()
     
-    private lazy var didTextField: UITextField = {
-        let textField = UITextField()
-        textField.placeholder = "did"
-        return textField
-    }()
-    
-    private lazy var didLogin: CHButton = {
-        let button = CHButton()
-        button.setTitle("login_DID", for: .normal)
-        button.addTarget(self, action: #selector(pre_login), for: .touchUpInside)
-        return button
-    }()
-    
-    @objc func randomAddress() {
-        self.addressTextField.text = "0x6F47cAf3270b14AB7242317a176ed8B69d393eBb"
-    }
-    
     
     @objc func DIDList() {
-//        let destUrl:URL = URL(string: "\(BaseSetting.base_url)/_api/client/unstable/address/\(walletAddress)")!
-//        let session = URLSession.shared
-//        var request = URLRequest(url: destUrl)
-//        request.httpMethod = "GET"
-//        let task: URLSessionDataTask = session.dataTask(with: request) {[weak self] data, response, error in
-//            guard let self = self else { return }
-//            guard error == nil, let data:Data = data, let httpResponse :HTTPURLResponse = response as? HTTPURLResponse else {
-//                return
-//            }
-////            let data = try?JSONSerialization.data(withJSONObject: json, options: [])
-//            let jsonString = String(data: data, encoding: String.Encoding.utf8)
-//            if httpResponse.statusCode != 200 {
-//                return
-//            }
-//            print(response)
-//            print(jsonString)
-//
-//        }
-//        task.resume()
-        
-        
-        guard let walletAddress = self.addressTextField.text else { return }
-        if walletAddress.isEmpty {
-            print("walletAddres could not null")
-        }
         client?.getDIDList(walletAddress, success: { [weak self]  response in
             guard let self = self else { return }
             guard let response = response else { return }
             self.listResponse = response
-//            if self.listResponse?.array.count > 0 {
-//                self.tableView.isHidden = false
-//            } else {
-//                self.tableView.isHidden = true
-//            }
             self.tableView.reloadData()
-            print("didListCount: \(self.listResponse?.array.count)")
+            debugPrint("didListCount: \(response.array.count)")
         }, failure: { error in
-            print("didListCount: \(error.debugDescription)")
+            debugPrint("didListCount: \(error.debugDescription)")
         })
     }
     
     @objc func createDID() {
-        guard let walletAddress = self.addressTextField.text else { return }
-        if walletAddress.isEmpty {
-            print("walletAddres could not null")
-        }
         client?.postCreateDID("did:pkh:eip155:1:\(walletAddress)", success: { [weak self] response in
             guard let self = self else { return }
             guard let response = response else { return }
             guard let message = response.message, let did = response.did, let updateTime = response.updated else { return }
-            print("create DID success")
             debugPrint("create did response: message-\(message),did-\(did),updateTime-\(updateTime)")
             self.did = did
-            let signin = self.signinMessage(message: message)
-            self.saveDID(did: did, params: ["signature":signin,"updated":updateTime,"operation":"create","address":"did:pkh:eip155:1:\(walletAddress)"])
+            let alert = UIAlertController(title: "create did success", message: "message: \(message),\ndid:\(did),\nupdateTime:\(updateTime)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "sign and save", style: .default, handler: { [weak self] action in
+                guard let self = self else { return }
+                let signin = self.signinMessage(message: message)
+                self.saveDID(did: did, params: ["signature":signin,"updated":updateTime,"operation":"create","address":"did:pkh:eip155:1:\(self.walletAddress)"])
+            })
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
         }, failure: { error in
-            print("create DID fail")
+            debugPrint("create DID fail")
         })
     }
     
@@ -213,20 +160,32 @@ class DIDLoginViewController: UIViewController {
         client?.postSaveDID(did, withParameter: params, success: {[weak self] response in
             guard let self = self else { return }
             guard let response = response else { return }
-            print("save success\(response.message ?? "")")
-            self.pre_loginDID(did: did)
+            debugPrint("save success\(response.message ?? "")")
+            let alert = UIAlertController(title: "save success", message: "did: \(self.did)", preferredStyle: .alert)
+            let okAction = UIAlertAction(title: "OK", style: .default)
+            let loginAction = UIAlertAction(title: "Login_DID", style: .default, handler: { [weak self] action in
+                guard let self = self else { return }
+                self.pre_loginDID(did: self.did)
+            })
+            alert.addAction(okAction)
+            alert.addAction(loginAction)
+            self.present(alert, animated: true)
         }, failure: { error in
-            print("save fail\(error.debugDescription)")
+            debugPrint("save fail\(error.debugDescription)")
         })
     }
     
-    @objc func pre_login() {
-        guard let did = self.didTextField.text else {
-            return
-        }
-//        if did.isEmpty {
-//            did =
-//        }
+    func didInfo(did: String) {
+        client?.getDIDInfo(did, success: { [weak self] listResponse in
+            guard let self = self else { return }
+            let didInfoVC = DIDInfoViewController()
+            didInfoVC.didString = did
+            didInfoVC.didInfo = listResponse
+            self.navigationController?.pushViewController(didInfoVC, animated: true)
+        }, failure: { error in
+            debugPrint("save fail\(error.debugDescription)")
+
+        })
     }
     
     func pre_loginDID(did: String) {
@@ -245,7 +204,17 @@ class DIDLoginViewController: UIViewController {
     func loginWithDID(identifier: [String: String], updateTime: String) {
         client?.postLoginDID(did, withParameter: ["type":"m.login.did.identity","updated":updateTime,"identifier":identifier], success: { response in
             guard let response = response else { return }
-            print("login successfully, user id: \(response.userId), access_toke: \(response.accessToken)")
+            print("login success, user id: \(response.userId ?? ""), access_toke: \(response.accessToken ?? "")")
+            let alert = UIAlertController(title: "login success", message: "user id: \(response.userId ?? "")\naccess_toke: \(response.accessToken ?? "")", preferredStyle: .alert)
+            BaseSetting.shared.userId = response.userId
+            BaseSetting.shared.access_token = response.accessToken
+            let okAction = UIAlertAction(title: "OK", style: .default) { [weak self] action in
+                guard let self = self else { return }
+//                self.pushToTabbar()
+                self.pushToLitTabbar()
+            }
+            alert.addAction(okAction)
+            self.present(alert, animated: true)
         }, failure: { error in
             print("login_did_error\(error.debugDescription)")
         })
@@ -258,20 +227,79 @@ class DIDLoginViewController: UIViewController {
         return sign!
     }
     
-    func hexStringToData(string: String) -> Data {
-        let stringArray = Array(string)
-        var data: Data = Data()
-        for i in stride(from: 0, to: string.count, by: 2) {
-            let pair: String = String(stringArray[i]) + String(stringArray[i+1])
-            if let byteNum = UInt8(pair, radix: 16) {
-                let byte = Data([byteNum])
-                data.append(byte)
-            }
-            else{
-                fatalError()
-            }
-        }
-        return data
+//    func hexStringToData(string: String) -> Data {
+//        let stringArray = Array(string)
+//        var data: Data = Data()
+//        for i in stride(from: 0, to: string.count, by: 2) {
+//            let pair: String = String(stringArray[i]) + String(stringArray[i+1])
+//            if let byteNum = UInt8(pair, radix: 16) {
+//                let byte = Data([byteNum])
+//                data.append(byte)
+//            }
+//            else{
+//                fatalError()
+//            }
+//        }
+//        return data
+//    }
+    
+    func pushToLitTabbar() {
+        let tabbar = UITabBarController()
+        let homeVC = HomeViewController()
+        homeVC.navigationItem.title = "home"
+        homeVC.tabBarItem.title = "home"
+        homeVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        homeVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let homeNavi = UINavigationController(rootViewController: homeVC)
+
+        
+        let mineVC = MineViewController()
+        mineVC.navigationItem.title = "mine"
+        mineVC.tabBarItem.title = "mine"
+        mineVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        mineVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let mineNavi = UINavigationController(rootViewController: mineVC)
+        
+        tabbar.viewControllers = [homeNavi,mineNavi]
+        tabbar.selectedIndex = 0
+        tabbar.tabBar.tintColor = .themeBlue
+        UIWindow.keyWindow?.rootViewController = tabbar
+    }
+    
+    func pushToTabbar() {
+        let tabbar = UITabBarController()
+        let messageVC = MessageViewController()
+        messageVC.navigationItem.title = "message"
+        messageVC.tabBarItem.title = "message"
+        messageVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        messageVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let messageNavi = UINavigationController(rootViewController: messageVC)
+        
+        let roomVC = RoomViewController()
+        roomVC.navigationItem.title = "room"
+        roomVC.tabBarItem.title = "room"
+        roomVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        roomVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let roomNavi = UINavigationController(rootViewController: roomVC)
+        
+        let contactVC = ContanctViewController()
+        contactVC.navigationItem.title = "contact"
+        contactVC.tabBarItem.title = "contact"
+        contactVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        contactVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let contactNavi = UINavigationController(rootViewController: contactVC)
+        
+        let mineVC = MineViewController()
+        mineVC.navigationItem.title = "mine"
+        mineVC.tabBarItem.title = "mine"
+        mineVC.tabBarItem.image = UIImage.init(named: "tabbar_mine_normal")
+        mineVC.tabBarItem.selectedImage = UIImage.init(named: "tabbar_mine_select")
+        let mineNavi = UINavigationController(rootViewController: mineVC)
+        
+        tabbar.viewControllers = [messageNavi,roomNavi,contactNavi,mineNavi]
+        tabbar.selectedIndex = 0
+        tabbar.tabBar.tintColor = .themeBlue
+        UIWindow.keyWindow?.rootViewController = tabbar
     }
     
     
@@ -299,11 +327,24 @@ extension DIDLoginViewController: UITableViewDelegate,UITableViewDataSource {
         }
         let didString = self.listResponse?.array?[indexPath.row] ?? ""
         cell.didLabel.text = didString
-        return UITableViewCell()
+        return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        60
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let didString = self.listResponse?.array?[indexPath.row] ?? ""
+        let alert = UIAlertController(title: "DID:\(didString)", message: nil, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "DID_login", style: .default) {[weak self] action in
+            guard let self = self else { return }
+            self.pre_loginDID(did: didString)
+        }
+        let infoAction = UIAlertAction(title: "DID_info", style: .default) {[weak self] action in
+            guard let self = self else { return }
+            self.didInfo(did: didString)
+        }
+        
+        alert.addAction(infoAction)
+        alert.addAction(okAction)
+        self.present(alert, animated: true)
     }
     
     

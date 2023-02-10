@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		6A0433DA2992296B005376BD /* BaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433D92992296B005376BD /* BaseSetting.swift */; };
+		6A0433DF299397A8005376BD /* DIDInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433DE299397A8005376BD /* DIDInfoViewController.swift */; };
+		6A0433E32993A857005376BD /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433E22993A857005376BD /* HUD.swift */; };
+		6A0433E52993C7BC005376BD /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433E42993C7BC005376BD /* MessageViewController.swift */; };
+		6A0433E82993C7E9005376BD /* RoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433E72993C7E9005376BD /* RoomViewController.swift */; };
+		6A0433EA2993C805005376BD /* ContanctViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433E92993C805005376BD /* ContanctViewController.swift */; };
+		6A0433EC2993C814005376BD /* MineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433EB2993C814005376BD /* MineViewController.swift */; };
+		6A0433EE299499C4005376BD /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433ED299499C4005376BD /* BaseViewController.swift */; };
+		6A0433F02994DF28005376BD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433EF2994DF28005376BD /* HomeViewController.swift */; };
+		6A0433F22994E5D7005376BD /* CHCorButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0433F12994E5D7005376BD /* CHCorButton.swift */; };
 		6A2E3CF22977D7E400C9D6E2 /* Foundation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3CE12977D7E400C9D6E2 /* Foundation+Extension.swift */; };
 		6A2E3CF32977D7E400C9D6E2 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3CE32977D7E400C9D6E2 /* Operator.swift */; };
 		6A2E3CF42977D7E400C9D6E2 /* AttributedStringSugar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A2E3CE42977D7E400C9D6E2 /* AttributedStringSugar.swift */; };
@@ -52,6 +61,15 @@
 
 /* Begin PBXFileReference section */
 		6A0433D92992296B005376BD /* BaseSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseSetting.swift; sourceTree = "<group>"; };
+		6A0433DE299397A8005376BD /* DIDInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIDInfoViewController.swift; sourceTree = "<group>"; };
+		6A0433E22993A857005376BD /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		6A0433E42993C7BC005376BD /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		6A0433E72993C7E9005376BD /* RoomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomViewController.swift; sourceTree = "<group>"; };
+		6A0433E92993C805005376BD /* ContanctViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContanctViewController.swift; sourceTree = "<group>"; };
+		6A0433EB2993C814005376BD /* MineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MineViewController.swift; sourceTree = "<group>"; };
+		6A0433ED299499C4005376BD /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		6A0433EF2994DF28005376BD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		6A0433F12994E5D7005376BD /* CHCorButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CHCorButton.swift; sourceTree = "<group>"; };
 		6A2E3CE12977D7E400C9D6E2 /* Foundation+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Foundation+Extension.swift"; sourceTree = "<group>"; };
 		6A2E3CE32977D7E400C9D6E2 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
 		6A2E3CE42977D7E400C9D6E2 /* AttributedStringSugar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AttributedStringSugar.swift; sourceTree = "<group>"; };
@@ -120,8 +138,15 @@
 		6A2E3CD72976A6C900C9D6E2 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				6AFF825A297684B4007A7C79 /* DIDLoginViewController.swift */,
+				6A0433ED299499C4005376BD /* BaseViewController.swift */,
 				6AFF825E29769362007A7C79 /* MainViewController.swift */,
+				6AFF825A297684B4007A7C79 /* DIDLoginViewController.swift */,
+				6A0433DE299397A8005376BD /* DIDInfoViewController.swift */,
+				6A0433E42993C7BC005376BD /* MessageViewController.swift */,
+				6A0433E72993C7E9005376BD /* RoomViewController.swift */,
+				6A0433E92993C805005376BD /* ContanctViewController.swift */,
+				6A0433EB2993C814005376BD /* MineViewController.swift */,
+				6A0433EF2994DF28005376BD /* HomeViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -171,6 +196,8 @@
 			children = (
 				6A2E3D012977DC3000C9D6E2 /* CHButton.swift */,
 				6A2E3D032977DC7500C9D6E2 /* CHBigButton.swift */,
+				6A0433F12994E5D7005376BD /* CHCorButton.swift */,
+				6A0433E22993A857005376BD /* HUD.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -261,7 +288,6 @@
 				9CF46DD728F411AD0024F98D /* Frameworks */,
 				9CF46DD828F411AD0024F98D /* Resources */,
 				FDE5ADED10E0588FC417D843 /* [CP] Embed Pods Frameworks */,
-				4F9C7FAA997AFE71DD62C816 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -317,6 +343,7 @@
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1400;
 				LastUpgradeCheck = 1400;
+				ORGANIZATIONNAME = sending.network;
 				TargetAttributes = {
 					9CF46DD928F411AD0024F98D = {
 						CreatedOnToolsVersion = 14.0.1;
@@ -379,23 +406,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		4F9C7FAA997AFE71DD62C816 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sendingnetwork-ios-demo/Pods-sendingnetwork-ios-demo-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sendingnetwork-ios-demo/Pods-sendingnetwork-ios-demo-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-sendingnetwork-ios-demo/Pods-sendingnetwork-ios-demo-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6EC47221637FEC81BDE8DD78 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,21 +452,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A0433F02994DF28005376BD /* HomeViewController.swift in Sources */,
 				6A2E3CF22977D7E400C9D6E2 /* Foundation+Extension.swift in Sources */,
 				6A2E3D022977DC3000C9D6E2 /* CHButton.swift in Sources */,
 				6AFF825C297684B4007A7C79 /* DIDLoginViewController.swift in Sources */,
+				6A0433E32993A857005376BD /* HUD.swift in Sources */,
 				9CF46DE228F411AD0024F98D /* ViewController.swift in Sources */,
+				6A0433EE299499C4005376BD /* BaseViewController.swift in Sources */,
 				6A0433DA2992296B005376BD /* BaseSetting.swift in Sources */,
 				6A2E3D042977DC7500C9D6E2 /* CHBigButton.swift in Sources */,
 				9CF46DDE28F411AD0024F98D /* AppDelegate.swift in Sources */,
 				6A2E3CF82977D7E400C9D6E2 /* Global.swift in Sources */,
+				6A0433E82993C7E9005376BD /* RoomViewController.swift in Sources */,
+				6A0433DF299397A8005376BD /* DIDInfoViewController.swift in Sources */,
 				6A2E3D072977DEB400C9D6E2 /* DIDTableViewCell.swift in Sources */,
+				6A0433EC2993C814005376BD /* MineViewController.swift in Sources */,
 				6A2E3CFB2977D7E400C9D6E2 /* Mems.swift in Sources */,
 				6A2E3CF52977D7E400C9D6E2 /* UIKit+Extenstion.swift in Sources */,
 				6A2E3CF32977D7E400C9D6E2 /* Operator.swift in Sources */,
+				6A0433E52993C7BC005376BD /* MessageViewController.swift in Sources */,
 				9CF46DE028F411AD0024F98D /* SceneDelegate.swift in Sources */,
 				6AFF825F29769362007A7C79 /* MainViewController.swift in Sources */,
+				6A0433EA2993C805005376BD /* ContanctViewController.swift in Sources */,
 				6A2E3CFD2977D7E400C9D6E2 /* Font.swift in Sources */,
+				6A0433F22994E5D7005376BD /* CHCorButton.swift in Sources */,
 				6A2E3CF42977D7E400C9D6E2 /* AttributedStringSugar.swift in Sources */,
 				6A2E3CF92977D7E400C9D6E2 /* CertInfo.swift in Sources */,
 			);
@@ -670,6 +689,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -726,6 +746,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -2577,6 +2577,7 @@ NSString *const kMXPushRuleScopeStringDevice = @"device";
     MXJSONModelSetString(response.type, JSONDictionary[@"type"]);
     MXJSONModelSetString(response.value, JSONDictionary[@"value"]);
     MXJSONModelSetString(response.keyId, JSONDictionary[@"key_id"]);
+    MXJSONModelSetString(response.raw, JSONDictionary[@"raw"]);
     return response;
 }
 
@@ -2588,8 +2589,8 @@ NSString *const kMXPushRuleScopeStringDevice = @"device";
 {
     MXDIDListInfoResponse *response = [[MXDIDListInfoResponse alloc] init];
     MXJSONModelSetString(response.publicKey, JSONDictionary[@"current_public_key"]);
-    MXJSONModelSetMXJSONModel(response.controllers, MXDiDInfoResponse,JSONDictionary[@"controllers"]);
-    MXJSONModelSetMXJSONModel(response.publicKeys, MXDiDInfoResponse,JSONDictionary[@"public_keys"]);
+    MXJSONModelSetMXJSONModelArray(response.controllers, MXDiDInfoResponse,JSONDictionary[@"controllers"]);
+    MXJSONModelSetMXJSONModelArray(response.publicKeys, MXDiDInfoResponse,JSONDictionary[@"public_keys"]);
     return response;
 }
 

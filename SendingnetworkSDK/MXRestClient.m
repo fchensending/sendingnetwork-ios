@@ -6561,7 +6561,7 @@ andUnauthenticatedHandler: (MXRestClientUnauthenticatedHandler)unauthenticatedHa
 - (MXHTTPOperation *)getDIDInfo:(NSString *)address
                               success:(void (^) (MXDIDListInfoResponse *response))success
                         failure:(void (^)(NSError *error))failure {
-    NSString *path = [NSString stringWithFormat:@"did/%@/detail",
+    NSString *path = [NSString stringWithFormat:@"%@/did/%@/detail",
                       kMXAPIPrefixPathUnstable,address];
     MXWeakify(self);
     return [httpClient requestWithMethod:@"GET"

@@ -478,7 +478,7 @@
 		</data>
 		<key>Headers/MXJSONModels.h</key>
 		<data>
-		B7jcglY4AQuJKMKdxy3QfpKuNog=
+		7KuBjBSNhF+U+BCrc3f3W+WET5c=
 		</data>
 		<key>Headers/MXKeyBackup.h</key>
 		<data>
@@ -1206,7 +1206,7 @@
 		</data>
 		<key>Modules/SendingnetworkSDK.swiftmodule/Project/x86_64-apple-ios-simulator.swiftsourceinfo</key>
 		<data>
-		aQ3M/OjCtKAqc5puz1S35xaoBig=
+		k5aPA/+BTOoWeVnKvXQtKR8JoE4=
 		</data>
 		<key>Modules/SendingnetworkSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
@@ -1218,7 +1218,7 @@
 		</data>
 		<key>Modules/SendingnetworkSDK.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		vQ4WLmpWrk9Uk/naklIvbjPChYw=
+		T7ZYGpTIMOAcPbCx1rfbZ36BAh0=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -2065,7 +2065,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			nugD8w/YFobXi0lOjEaWo/cu0IPxjOkNbBpN3/1j3v8=
+			6x5JFXQCUyG0psR7uiwgz4TF3ez/TUbfIkoN7eZN5NQ=
 			</data>
 		</dict>
 		<key>Headers/MXKeyBackup.h</key>
@@ -3332,7 +3332,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZNbcGyC3yfretQdhbX3z5g3PjldYd+/+nAlN+iecsi8=
+			t5Fcwpnx04pB3Fdy5thpgj8gN7nIwtYVtVFoKibvxfQ=
 			</data>
 		</dict>
 		<key>Modules/SendingnetworkSDK.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
@@ -3353,7 +3353,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			ieBokCi0turxzmRJaNf/SXUX9WTQmebrJrlPgUC2H5U=
+			6WgFayCXP0DSxyBQ9S09p1+BfcgqVgX5kqH8T+W3LaY=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

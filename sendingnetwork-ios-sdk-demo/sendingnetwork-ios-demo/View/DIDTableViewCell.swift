@@ -40,14 +40,14 @@ class DIDTableViewCell: UITableViewCell {
             make.left.equalTo(15)
             make.right.equalTo(-15)
             make.top.equalTo(5)
-            make.height.equalTo(45)
+            make.bottom.equalTo(-5)
         }
     }
     
     lazy var didLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         return label
     }()
 
