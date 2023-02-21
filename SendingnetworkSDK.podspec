@@ -64,6 +64,8 @@ Pod::Spec.new do |s|
       ss.name = "Radix"
       ss.source_files = "Radix/*.swift"
       ss.vendored_frameworks = "Radixmobile.xcframework"
+      ss.dependency 'RNCryptor', '~> 5.0'
+      ss.dependency 'TrustWalletCore', '~> 2.9.2'
   end
 
 #  s.subspec 'JingleCallStack' do |ss|
