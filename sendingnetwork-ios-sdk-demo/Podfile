@@ -15,6 +15,6 @@ target 'sendingnetwork-ios-demo' do
   pod "MBProgressHUD"
   pod "Kingfisher"
   
-  pod 'SendingnetworkSDK/Test', :path => '../SendingnetworkSDK.podspec'
+  pod 'SendingnetworkSDK', :path => '../SendingnetworkSDK.podspec'
 
 end

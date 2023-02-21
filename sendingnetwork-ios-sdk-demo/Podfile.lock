@@ -35,10 +35,14 @@ PODS:
   - Realm/Headers (10.27.0)
   - RNCryptor (5.1.0)
   - secp256k1.swift (0.1.4)
-  - SendingnetworkSDK/CryptoSDK (0.0.6):
+  - SendingnetworkSDK (0.1.0):
+    - SendingnetworkSDK/Core (= 0.1.0)
+  - SendingnetworkSDK/Core (0.1.0):
+    - SendingnetworkSDK/Lite
+    - SendingnetworkSDK/Radix
+  - SendingnetworkSDK/CryptoSDK (0.1.0):
     - MatrixSDKCrypto (= 0.1.7)
-  - SendingnetworkSDK/Radix (0.0.6)
-  - SendingnetworkSDK/Test (0.0.6):
+  - SendingnetworkSDK/Lite (0.1.0):
     - AFNetworking (~> 4.0.0)
     - GZIP (~> 1.3.0)
     - libbase58 (~> 0.1.4)
@@ -46,10 +50,10 @@ PODS:
     - Realm (= 10.27.0)
     - RNCryptor (~> 5.0)
     - SendingnetworkSDK/CryptoSDK
-    - SendingnetworkSDK/Radix
     - SVGKit
     - SwiftyBeaver (= 1.9.5)
     - TrustWalletCore (~> 2.9.2)
+  - SendingnetworkSDK/Radix (0.1.0)
   - SnapKit (5.6.0)
   - SVGKit (3.0.0):
     - CocoaLumberjack (~> 3.0)
@@ -70,7 +74,7 @@ PODS:
 DEPENDENCIES:
   - Kingfisher
   - MBProgressHUD
-  - SendingnetworkSDK/Test (from `../SendingnetworkSDK.podspec`)
+  - SendingnetworkSDK (from `../SendingnetworkSDK.podspec`)
   - SnapKit
   - web3.swift
 
@@ -116,7 +120,7 @@ SPEC CHECKSUMS:
   Realm: 9ca328bd7e700cc19703799785e37f77d1a130f2
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
-  SendingnetworkSDK: 62248b720d1b5f7177cf901f18ad2c3c2eeb782c
+  SendingnetworkSDK: a60e83e9a9b16ba3d5bc154463ec57cbdab9921f
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
@@ -124,6 +128,6 @@ SPEC CHECKSUMS:
   TrustWalletCore: 53f09313edb1c010de78314d023c67d2d4654864
   web3.swift: 82f5f5bd5b4983e155982080d4bfbfbc5e56e92a
 
-PODFILE CHECKSUM: c689a2eeec9bb293cf7921ecbc874f2ecb53a919
+PODFILE CHECKSUM: d281f589c274894a3324fab6dcefb874f395dab8
 
 COCOAPODS: 1.11.3

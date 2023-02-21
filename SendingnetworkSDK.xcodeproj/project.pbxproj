@@ -1510,7 +1510,6 @@
 		6A1E998B29879FDE008CA92E /* RadixService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadixService.swift; sourceTree = "<group>"; };
 		6A3168F42971739C00D3979E /* MXLoginDIDIdentityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXLoginDIDIdentityProvider.h; sourceTree = "<group>"; };
 		6A3168F52971739D00D3979E /* MXLoginDIDIdentityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXLoginDIDIdentityProvider.m; sourceTree = "<group>"; };
-		6A80AC852995EDE3008ACE50 /* SendingnetworkSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SendingnetworkSDK.framework; sourceTree = "<group>"; };
 		6AA46EF4296E9E8D004CC324 /* ContactService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactService.m; sourceTree = "<group>"; };
 		6AA46EF5296E9E8D004CC324 /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactService.h; sourceTree = "<group>"; };
 		6B65C8F8759926F01C0453AA /* Pods_SendingnetworkSDKTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendingnetworkSDKTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -2932,7 +2931,7 @@
 		32C6F92319DD814400EA4E9C = {
 			isa = PBXGroup;
 			children = (
-				6A80AC852995EDE3008ACE50 /* SendingnetworkSDK.framework */,
+				6A1E9981298778E5008CA92E /* Radix */,
 				6A0433C4298B641D005376BD /* Radixmobile.xcframework */,
 				32C03CBA21231C2500D92712 /* AUTHORS.rst */,
 				32D5573526BAF1540023D286 /* CHANGES.md */,
@@ -2958,7 +2957,6 @@
 		32C6F92F19DD814400EA4E9C /* SendingnetworkSDK */ = {
 			isa = PBXGroup;
 			children = (
-				6A1E9981298778E5008CA92E /* Radix */,
 				6AA46EF3296E9E8D004CC324 /* Contact */,
 				66836AB427CFA17200515780 /* EventStream */,
 				3A858DD82750EE0A006322C1 /* HomeServer */,
