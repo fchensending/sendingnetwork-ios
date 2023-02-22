@@ -16,4 +16,4 @@
 
 #import <Foundation/Foundation.h>
 
-NSString *const SendingnetworkSDKVersion = @"0.0.6";
+NSString *const SendingnetworkSDKVersion = @"0.1.1";
