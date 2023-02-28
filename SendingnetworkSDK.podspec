@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SendingnetworkSDK"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "The iOS SDK to build apps compatible with Sendingnetwork (https://www.sending.network)"
 
   s.description  = <<-DESC
