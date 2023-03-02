@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SendingnetworkSDK"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "The iOS SDK to build apps compatible with Sendingnetwork (https://www.sending.network)"
 
   s.description  = <<-DESC
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
       ss.source_files = "SendingnetworkSDK", "SendingnetworkSDK/**/*.{h,m}", "SendingnetworkSDK/**/*.{swift}"
 #      ss.source_files = "SendingnetworkSDK.framework/Headers/*.{h,m}"
 #      ss.osx.exclude_files = "SendingnetworkSDK/VoIP/MXiOSAudioOutputRoute*.swift"
-#      ss.private_header_files = ['SendingnetworkSDK/SendingnetworkSDKSwiftHeader.h', "SendingnetworkSDK/**/*_Private.h"]
+      ss.private_header_files = ['SendingnetworkSDK/SendingnetworkSDKSwiftHeader.h', "SendingnetworkSDK/**/*_Private.h"]
       ss.resources = "SendingnetworkSDK/**/*.{xcdatamodeld}"
       ss.frameworks = "CoreData"
 

@@ -39,8 +39,9 @@
 
 #import "ViewController.h"
 #import <SendingnetworkSDK/SendingnetworkSDK-Swift.h>
-#import <SendingnetworkSDK.h>
+#import <SendingnetworkSDK/SendingnetworkSDK.h>
 #import "sendingnetworkSDK-oc-demo-Bridging-Header.h"
+//#import "SendingnetworkSDKSwiftHeader.h"
 
 
 @interface ViewController ()
