@@ -36,6 +36,8 @@
 @property (nonatomic) BOOL testNet;
 @property (nonatomic) NSString* _Nonnull minOffSrvProtocol;
 @property (nonatomic) NSString* _Nonnull cacheStoreEndpoint;
+@property (nonatomic) long offSrvLimit;
+@property (nonatomic) long kvNodeCount;
 - (NSString* _Nonnull)baseURL;
 - (NSString* _Nonnull)connections;
 - (NSString* _Nonnull)hostAddrs;

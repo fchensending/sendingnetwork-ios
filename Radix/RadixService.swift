@@ -13,11 +13,25 @@ import RNCryptor
     @objc public static let shared = RadixService()
     // MARK: Setup
     private var radix: RadixmobileRadixMonolith?
-    private var timer: Timer?
    
     private override init() {
         super.init()
     }
+    
+    private lazy var radixQueue: DispatchQueue = {
+        let queue = DispatchQueue(label: "radix")
+        return queue
+    }()
+    
+    private lazy var gcdTimer: DispatchSourceTimer? = {
+        let timer = DispatchSource.makeTimerSource(queue: radixQueue)
+        timer.schedule(deadline: .now(),repeating: .seconds(30))
+        timer.setEventHandler(handler: {[weak self] in
+            self?.printPeers()
+        })
+        timer.resume()
+        return timer
+    }()
     
     // MARK: UI-driven functions
     
@@ -27,95 +41,85 @@ import RNCryptor
     }
     
     @objc public func start() {
-        if self.radix == nil {
-            guard let storageDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
-                fatalError("can't get document directory")
+        radixQueue.async {[weak self] in
+            guard let self = self else { return }
+            if self.radix == nil {
+                self.initRadix()
             }
-            guard let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
-                fatalError("can't get caches directory")
+            if let running = self.radix?.running() {
+                if !running {
+                    self.radix?.start()
+                }
             }
-            
-            self.radix = RadixmobileRadixMonolith()
-            self.radix?.storageDirectory = storageDirectory.path
-            self.radix?.cacheDirectory = cachesDirectory.path
-            
-            if !RadixSettings.shared.mainNet {
-                self.radix?.testNet = true
-            }
-            
-            NSLog("Storage directory: \(storageDirectory)")
-            NSLog("Cache directory: \(cachesDirectory)")
-                        
-            if RadixSettings.shared.p2pEnableStaticPeer {
-                self.setStaticPeer(RadixSettings.shared.p2pStaticPeerURI)
-            } else {
-                self.setStaticPeer("")
-            }
-            
-            self.setMulticastEnabled(!RadixSettings.shared.p2pDisableMulticast)
+            guard let _ = self.gcdTimer else { return }
         }
-        self.radix?.start()
-        if self.timer == nil {
-            self.timer = Timer.scheduledTimer(timeInterval: 30, target: self, selector: #selector(self.printPeers), userInfo: nil, repeats: true)
-        }
-        self.timer?.fire()
     }
     
     @objc private func printPeers() {
         keepHealth()
     }
     
+    @objc private func initRadix() {
+        guard let storageDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first else {
+            fatalError("can't get document directory")
+        }
+        guard let cachesDirectory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask).first else {
+            fatalError("can't get caches directory")
+        }
+        
+        self.radix = RadixmobileRadixMonolith()
+        self.radix?.storageDirectory = storageDirectory.path
+        self.radix?.cacheDirectory = cachesDirectory.path
+
+        if !RadixSettings.shared.mainNet {
+            self.radix?.testNet = true
+        } else {
+            self.radix?.testNet = false
+        }
+        
+        if RadixSettings.shared.p2pEnableStaticPeer {
+            self.setStaticPeer(RadixSettings.shared.p2pStaticPeerURI)
+        } else {
+            self.setStaticPeer("")
+        }
+        self.setMulticastEnabled(!RadixSettings.shared.p2pDisableMulticast)
+    }
+    
+    @objc private func reStart() {
+        if self.radix == nil {
+            initRadix()
+        }
+        self.radix?.start()
+    }
+    
     @objc private func keepHealth() {
-        let destUrl:URL = URL(string: "http://127.0.0.1:65432/_api/client/monitor/health")!
+        let destUrl:URL = URL(string: "http://localhost:65432/_api/client/monitor/health")!
         let session = URLSession.shared
         var request = URLRequest(url: destUrl)
         request.httpMethod = "GET"
+//        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         let task: URLSessionDataTask = session.dataTask(with: request) {[weak self] data, response, error in
             guard let self = self else { return }
-            guard error == nil, let data:Data = data, let httpResponse :HTTPURLResponse = response as? HTTPURLResponse else {
-                debugPrint("server disconnect")
-                self.debugShowAlert()
-                self.radix?.start()
-                return
+            self.radixQueue.async {
+                guard error == nil, let httpResponse :HTTPURLResponse = response as? HTTPURLResponse else {
+                    self.stop()
+                    self.reStart()
+                    return
+                }
+                if httpResponse.statusCode != 200 {
+                    self.stop()
+                    self.reStart()
+                    return
+                }
             }
-            if httpResponse.statusCode != 200 {
-                debugPrint("server disconnect")
-                self.debugShowAlert()
-                self.radix?.start()
-                return
-            }
-
-            print("server connecting")
         }
         task.resume()
-    }
-    
-    @objc private func debugShowAlert() {
-        #if DEBUG
-        DispatchQueue.main.async {
-            let alert = UIAlertController(title: "alert", message: "server diconnect, has connect", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "OK", style: .default)
-            alert.addAction(okAction)
-            self.keyWindow?.rootViewController?.present(alert, animated: true)
-        }
-        #endif
-    }
-    
-    @objc var keyWindow: UIWindow? {
-        if #available(iOS 13.0, *) {
-            return UIApplication.shared.connectedScenes
-                .compactMap { $0 as? UIWindowScene }.first?.windows
-                .first(where: { $0.isKeyWindow })
-        }
-        return UIApplication.shared.keyWindow
     }
     
     @objc public func stop() {
         if self.radix != nil {
             self.radix?.stop()
         }
-        self.timer?.invalidate()
-        self.timer = nil
     }
     
     @objc public func setMulticastEnabled(_ enabled: Bool) {
