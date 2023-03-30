@@ -22,6 +22,10 @@ abstract_target 'SendingnetworkSDK' do
     pod 'TrustWalletCore', '~> 2.9.2'
     pod 'RNCryptor', '~> 5.0'
     
+    #my
+    pod 'Moya/RxSwift'
+    pod 'CodableWrapper'
+    
     target 'SendingnetworkSDK-iOS' do
         platform :ios, '12.0'
         

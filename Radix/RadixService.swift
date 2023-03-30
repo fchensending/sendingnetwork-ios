@@ -97,21 +97,25 @@ import RNCryptor
         let session = URLSession.shared
         var request = URLRequest(url: destUrl)
         request.httpMethod = "GET"
-//        request.setValue("application/json; charset=UTF-8", forHTTPHeaderField: "Content-Type")
         let task: URLSessionDataTask = session.dataTask(with: request) {[weak self] data, response, error in
             guard let self = self else { return }
-            self.radixQueue.async {
-                guard error == nil, let httpResponse :HTTPURLResponse = response as? HTTPURLResponse else {
+            guard error == nil, let httpResponse :HTTPURLResponse = response as? HTTPURLResponse else {
+                self.radixQueue.async {
                     self.stop()
                     self.reStart()
-                    return
+                    debugPrint("health fail")
                 }
-                if httpResponse.statusCode != 200 {
-                    self.stop()
-                    self.reStart()
-                    return
-                }
+                return
             }
+            if httpResponse.statusCode != 200 {
+                self.radixQueue.async {
+                    self.stop()
+                    self.reStart()
+                    debugPrint("health fail")
+                }
+                return
+            }
+            debugPrint("health success")
         }
         task.resume()
     }

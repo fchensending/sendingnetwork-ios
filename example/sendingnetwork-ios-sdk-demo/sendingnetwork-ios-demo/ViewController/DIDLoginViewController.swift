@@ -72,8 +72,6 @@ class DIDLoginViewController: BaseViewController {
             make.top.equalTo(actionView.snp.bottom).offset(15)
             make.bottom.equalTo(-CGFloat.safeAreaBottom)
         }
-        
-
     }
     
     private lazy var addressLable: UILabel = {
@@ -122,8 +120,28 @@ class DIDLoginViewController: BaseViewController {
         return button
     }()
     
+//    @objc func DIDList() {
+//        DIDClient.getDIDList(address: walletAddress) { result in
+//            switch result {
+//            case .success(let list):
+//                debugPrint(list)
+//            case .failure(let error):
+//                debugPrint(error)
+//            }
+//        }
+//    }
+    
     
     @objc func DIDList() {
+//        DIDClient.getDIDList(address: walletAddress) { result in
+//            switch result {
+//            case .success(let list):
+//                debugPrint(list?.data)
+//            case .failure(let error):
+//                debugPrint(error)
+//            }
+//        }
+        
         client?.getDIDList(walletAddress, success: { [weak self]  response in
             guard let self = self else { return }
             guard let response = response else { return }
@@ -131,7 +149,7 @@ class DIDLoginViewController: BaseViewController {
             self.tableView.reloadData()
             debugPrint("didListCount: \(response.array.count)")
         }, failure: { error in
-            debugPrint("didListCount: \(error.debugDescription)")
+            debugPrint("error: \(error.debugDescription)")
         })
     }
     

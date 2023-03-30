@@ -62,7 +62,6 @@ class DIDInfoViewController: UIViewController {
     var didInfo: MXDIDListInfoResponse? {
         didSet {
             guard let didInfo = didInfo else { return }
-            
         }
     }
     

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SendingnetworkSDK
 
 class RoomViewController: BaseViewController {
 
@@ -21,7 +22,14 @@ class RoomViewController: BaseViewController {
     }
     
     override func loadData() {
-        
+        client?.publicRooms(onServer: nil, limit: 30) { response in
+            switch response {
+            case .success(let rooms):
+                print("The public rooms are: \(rooms)")
+            case .failure(let error):
+                print("get public rooms \(error)")
+            }
+        }
     }
     
 

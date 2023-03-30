@@ -85,6 +85,8 @@ class HomeViewController: BaseViewController {
         
     }
     
+    
+    
     private lazy var userIdLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
@@ -275,7 +277,14 @@ class HomeViewController: BaseViewController {
     }
     
     override func loadData() {
-        
+        client?.publicRooms(onServer: nil, limit: 30) { response in
+            switch response {
+            case .success(let rooms):
+                print("The public rooms are: \(rooms)")
+            case .failure(let error):
+                print("get public rooms \(error)")
+            }
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

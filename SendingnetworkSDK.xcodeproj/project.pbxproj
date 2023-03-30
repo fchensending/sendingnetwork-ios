@@ -532,9 +532,13 @@
 		6A1E9989298778E6008CA92E /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1E9985298778E5008CA92E /* Credentials.swift */; };
 		6A1E998C29879FDE008CA92E /* RadixSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1E998A29879FDE008CA92E /* RadixSettings.swift */; };
 		6A1E998D29879FDE008CA92E /* RadixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A1E998B29879FDE008CA92E /* RadixService.swift */; };
+		6A23CB0129D44153009A1780 /* APIProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23CB0029D44153009A1780 /* APIProvider.swift */; };
+		6A23CB0529D45ACB009A1780 /* SDNBaseSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23CB0429D45ACB009A1780 /* SDNBaseSetting.swift */; };
+		6A23CB0729D45CEB009A1780 /* DIDAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23CB0629D45CEB009A1780 /* DIDAPI.swift */; };
+		6A23CB0D29D53E20009A1780 /* DIDModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A23CB0C29D53E20009A1780 /* DIDModel.swift */; };
+		6A23CB1229D57692009A1780 /* Radixmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A23CB1129D57691009A1780 /* Radixmobile.xcframework */; };
 		6A3168F62971739D00D3979E /* MXLoginDIDIdentityProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = 6A3168F42971739C00D3979E /* MXLoginDIDIdentityProvider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6A3168F72971739D00D3979E /* MXLoginDIDIdentityProvider.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A3168F52971739D00D3979E /* MXLoginDIDIdentityProvider.m */; };
-		6A6ABB5329D2BE720088F924 /* Radixmobile.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A6ABB5229D2BE720088F924 /* Radixmobile.xcframework */; };
 		6AA46EE9296D8E98004CC324 /* MXDIDLoginIdentifier.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF46E1128F421A30024F98D /* MXDIDLoginIdentifier.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AA46EEE296D92DD004CC324 /* MXDappInfo.h in Headers */ = {isa = PBXBuildFile; fileRef = 9CF46E0E28F420CE0024F98D /* MXDappInfo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6AA46EF6296E9E8D004CC324 /* ContactService.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA46EF4296E9E8D004CC324 /* ContactService.m */; };
@@ -1507,9 +1511,13 @@
 		6A1E9985298778E5008CA92E /* Credentials.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		6A1E998A29879FDE008CA92E /* RadixSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadixSettings.swift; sourceTree = "<group>"; };
 		6A1E998B29879FDE008CA92E /* RadixService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadixService.swift; sourceTree = "<group>"; };
+		6A23CB0029D44153009A1780 /* APIProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProvider.swift; sourceTree = "<group>"; };
+		6A23CB0429D45ACB009A1780 /* SDNBaseSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SDNBaseSetting.swift; sourceTree = "<group>"; };
+		6A23CB0629D45CEB009A1780 /* DIDAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIDAPI.swift; sourceTree = "<group>"; };
+		6A23CB0C29D53E20009A1780 /* DIDModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DIDModel.swift; sourceTree = "<group>"; };
+		6A23CB1129D57691009A1780 /* Radixmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Radixmobile.xcframework; sourceTree = "<group>"; };
 		6A3168F42971739C00D3979E /* MXLoginDIDIdentityProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MXLoginDIDIdentityProvider.h; sourceTree = "<group>"; };
 		6A3168F52971739D00D3979E /* MXLoginDIDIdentityProvider.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MXLoginDIDIdentityProvider.m; sourceTree = "<group>"; };
-		6A6ABB5229D2BE720088F924 /* Radixmobile.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Radixmobile.xcframework; sourceTree = "<group>"; };
 		6AA46EF4296E9E8D004CC324 /* ContactService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContactService.m; sourceTree = "<group>"; };
 		6AA46EF5296E9E8D004CC324 /* ContactService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContactService.h; sourceTree = "<group>"; };
 		6B65C8F8759926F01C0453AA /* Pods_SendingnetworkSDKTests_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SendingnetworkSDKTests_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1936,7 +1944,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6ABB5329D2BE720088F924 /* Radixmobile.xcframework in Frameworks */,
+				6A23CB1229D57692009A1780 /* Radixmobile.xcframework in Frameworks */,
 				3489B40A85709695DC4EB17C /* Pods_SendingnetworkSDK_SendingnetworkSDK_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2931,7 +2939,7 @@
 		32C6F92319DD814400EA4E9C = {
 			isa = PBXGroup;
 			children = (
-				6A6ABB5229D2BE720088F924 /* Radixmobile.xcframework */,
+				6A23CB1129D57691009A1780 /* Radixmobile.xcframework */,
 				6A1E9981298778E5008CA92E /* Radix */,
 				32C03CBA21231C2500D92712 /* AUTHORS.rst */,
 				32D5573526BAF1540023D286 /* CHANGES.md */,
@@ -2957,6 +2965,8 @@
 		32C6F92F19DD814400EA4E9C /* SendingnetworkSDK */ = {
 			isa = PBXGroup;
 			children = (
+				6A23CB0A29D53D1B009A1780 /* Model */,
+				6A23CAFD29D44122009A1780 /* API */,
 				6AA46EF3296E9E8D004CC324 /* Contact */,
 				66836AB427CFA17200515780 /* EventStream */,
 				3A858DD82750EE0A006322C1 /* HomeServer */,
@@ -2994,6 +3004,7 @@
 				F0C34CBA1C18C93700C36F09 /* MXSDKOptions.m */,
 				EC383BAE254062A7002FBBE6 /* SendingnetworkSDKSwiftHeader.h */,
 				32C6F93019DD814400EA4E9C /* Supporting Files */,
+				6A23CB0429D45ACB009A1780 /* SDNBaseSetting.swift */,
 			);
 			path = SendingnetworkSDK;
 			sourceTree = "<group>";
@@ -3307,6 +3318,31 @@
 				6A1E9985298778E5008CA92E /* Credentials.swift */,
 			);
 			path = Radix;
+			sourceTree = "<group>";
+		};
+		6A23CAFD29D44122009A1780 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				6A23CB0029D44153009A1780 /* APIProvider.swift */,
+				6A23CB0629D45CEB009A1780 /* DIDAPI.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		6A23CB0A29D53D1B009A1780 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A23CB0B29D53D2F009A1780 /* DID */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6A23CB0B29D53D2F009A1780 /* DID */ = {
+			isa = PBXGroup;
+			children = (
+				6A23CB0C29D53E20009A1780 /* DIDModel.swift */,
+			);
+			path = DID;
 			sourceTree = "<group>";
 		};
 		6AA46EF3296E9E8D004CC324 /* Contact */ = {
@@ -4719,6 +4755,7 @@
 				EC131B132769E70400712964 /* MXThreadEventTimeline.swift in Sources */,
 				327E9AD82284803100A98BC1 /* MXEventAnnotation.m in Sources */,
 				B135065927E8C75D00BD3276 /* MXLocationService.swift in Sources */,
+				6A23CB0D29D53E20009A1780 /* DIDModel.swift in Sources */,
 				EC8A53E625B1BCC6004E0802 /* MXThirdPartyProtocol.m in Sources */,
 				32999DE022DCD183004FF987 /* MXPusher.m in Sources */,
 				F03EF4FF1DF014D9009DF592 /* MXMediaLoader.m in Sources */,
@@ -4758,6 +4795,7 @@
 				B17982FC2119E4A2001FD722 /* MXRoomPowerLevels.m in Sources */,
 				B146D4E421A5AEF200D8C2C6 /* MXRealmMediaScanMapper.m in Sources */,
 				B146D4E321A5AEF200D8C2C6 /* MXRealmMediaScan.m in Sources */,
+				6A23CB0129D44153009A1780 /* APIProvider.swift in Sources */,
 				3291DC8523DF52E20009732F /* MXRoomCreationParameters.m in Sources */,
 				32C235731F827F3800E38FC5 /* MXRoomOperation.m in Sources */,
 				322A51C41D9AC8FE00C8536D /* MXCryptoAlgorithms.m in Sources */,
@@ -4801,6 +4839,7 @@
 				324AAC70239913AD00380A66 /* MXKeyVerificationJSONModel.m in Sources */,
 				C6D5D60A1E4FA74000706C0F /* MXEnumConstants.swift in Sources */,
 				3A858DDA2750EE3F006322C1 /* MXHomeserverCapabilitiesService.swift in Sources */,
+				6A23CB0729D45CEB009A1780 /* DIDAPI.swift in Sources */,
 				6A3168F72971739D00D3979E /* MXLoginDIDIdentityProvider.m in Sources */,
 				327E9ADD2284804500A98BC1 /* MXEventRelations.m in Sources */,
 				B19EC8A2260E134A00543BEC /* MXRoomInitialStateEventBuilder.swift in Sources */,
@@ -5056,6 +5095,7 @@
 				ECD2897926E8EE9300F268CF /* MXRoomListDataSortOptions.swift in Sources */,
 				B1EE98D12804883B00AB63F0 /* MXGeoURIComponents.swift in Sources */,
 				ECDA763527B527BA000C48CF /* MXEvent+Extensions.swift in Sources */,
+				6A23CB0529D45ACB009A1780 /* SDNBaseSetting.swift in Sources */,
 				B146D4F321A5AF7F00D8C2C6 /* MXRealmEventScan.m in Sources */,
 				B141DF0E283CDD180023867A /* Realm+SendingnetworkSDK.swift in Sources */,
 				32B090E2261F709B002924AA /* MXAsyncTaskQueue.swift in Sources */,

@@ -58,6 +58,9 @@ Pod::Spec.new do |s|
       ss.dependency 'SVGKit'
 #      ss.vendored_frameworks = "SendingnetworkSDK.framework"
 
+      ss.dependency 'Moya/RxSwift'
+      ss.dependency 'CodableWrapper'
+
   end
   
   s.subspec 'Radix' do |ss|

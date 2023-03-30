@@ -14,12 +14,19 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - Alamofire (5.6.4)
   - CocoaLumberjack (3.8.0):
     - CocoaLumberjack/Core (= 3.8.0)
   - CocoaLumberjack/Core (3.8.0)
+  - CodableWrapper (0.3.2)
   - GZIP (1.3.0)
   - libbase58 (0.1.4)
   - MatrixSDKCrypto (0.1.7)
+  - Moya/Core (15.0.0):
+    - Alamofire (~> 5.0)
+  - Moya/RxSwift (15.0.0):
+    - Moya/Core
+    - RxSwift (~> 6.0)
   - OHHTTPStubs (9.1.0):
     - OHHTTPStubs/Default (= 9.1.0)
   - OHHTTPStubs/Core (9.1.0)
@@ -42,6 +49,7 @@ PODS:
     - Realm/Headers (= 10.27.0)
   - Realm/Headers (10.27.0)
   - RNCryptor (5.1.0)
+  - RxSwift (6.5.0)
   - SVGKit (3.0.0):
     - CocoaLumberjack (~> 3.0)
   - SwiftProtobuf (1.20.3)
@@ -55,9 +63,11 @@ PODS:
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0.0)
+  - CodableWrapper
   - GZIP (~> 1.3.0)
   - libbase58 (~> 0.1.4)
   - MatrixSDKCrypto (= 0.1.7)
+  - Moya/RxSwift
   - OHHTTPStubs (~> 9.1.0)
   - OLMKit (~> 3.2.5)
   - Realm (= 10.27.0)
@@ -69,14 +79,18 @@ DEPENDENCIES:
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - Alamofire
     - CocoaLumberjack
+    - CodableWrapper
     - GZIP
     - libbase58
     - MatrixSDKCrypto
+    - Moya
     - OHHTTPStubs
     - OLMKit
     - Realm
     - RNCryptor
+    - RxSwift
     - SVGKit
     - SwiftProtobuf
     - SwiftyBeaver
@@ -84,19 +98,23 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   AFNetworking: 3bd23d814e976cd148d7d44c3ab78017b744cd58
+  Alamofire: 4e95d97098eacb88856099c4fc79b526a299e48c
   CocoaLumberjack: 78abfb691154e2a9df8ded4350d504ee19d90732
+  CodableWrapper: fbb76b3bea6519564b456bb295317df35d5100c5
   GZIP: 416858efbe66b41b206895ac6dfd5493200d95b3
   libbase58: 7c040313537b8c44b6e2d15586af8e21f7354efd
   MatrixSDKCrypto: 2bd9ca41b2c644839f4e680a64897d56b3f95392
+  Moya: 138f0573e53411fb3dc17016add0b748dfbd78ee
   OHHTTPStubs: 90eac6d8f2c18317baeca36698523dc67c513831
   OLMKit: da115f16582e47626616874e20f7bb92222c7a51
   Realm: 9ca328bd7e700cc19703799785e37f77d1a130f2
   RNCryptor: a369134686cd2ad391323cc856b62e591193ba79
+  RxSwift: 5710a9e6b17f3c3d6e40d6e559b9fa1e813b2ef8
   SVGKit: 1ad7513f8c74d9652f94ed64ddecda1a23864dea
   SwiftProtobuf: b02b5075dcf60c9f5f403000b3b0c202a11b6ae1
   SwiftyBeaver: 84069991dd5dca07d7069100985badaca7f0ce82
   TrustWalletCore: 53f09313edb1c010de78314d023c67d2d4654864
 
-PODFILE CHECKSUM: 5e18fea73ccc9f2530665013d98dda0912c1959e
+PODFILE CHECKSUM: 953c87d10b18d099443b5c80cd0820449312e721
 
 COCOAPODS: 1.11.3
